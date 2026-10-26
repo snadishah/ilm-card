@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Ilm Card</title>
+<meta name="description" content="Ilm Card puts a full school term on one memory card. It plays on a basic Android phone, with no internet.">
+<meta name="theme-color" content="#1d4a3a">
+<meta property="og:title" content="Ilm Card">
+<meta property="og:description" content="Internet nahi? Padhai phir bhi. A full school term on one memory card.">
+<meta property="og:image" content="https://ilmcard.vercel.app/assets/share.jpg">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/fraunces-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<style>html{padding:env(safe-area-inset-top,0) 0 env(safe-area-inset-bottom,0)}img{max-width:100%}[hidden]{display:none!important}</style>
+<noscript><style>.track,#scene,.fx,.route,.hint,.more,.play,.tags{display:none}.stage{position:relative;inset:auto;overflow:visible;min-height:100vh;padding:96px 20px 80px}.chapter{position:relative;left:auto;right:auto;top:auto;bottom:auto;opacity:1;visibility:visible;transform:none;width:min(40rem,100%);margin:0 auto;padding-block:7vh}</style></noscript>
+</head>
+<body>
+<div class="track" id="top" aria-hidden="true"></div>
+<div class="stage" id="stage" data-tone="light">
+  <canvas id="scene" aria-hidden="true"></canvas>
+  <div class="fx veil-side"></div>
+  <div class="fx veil-mid"></div>
+  <div class="fx veil-top"></div>
+  <div class="fx vignette"></div>
+  <div class="fx grain" id="grain"></div>
+  <div class="tags" id="tags" aria-hidden="true"></div>
+
+  <header class="bar">
+    <a class="brand" href="#top" data-go="0" aria-label="Ilm Card, back to the start">
+      <svg viewBox="0 0 21 26" aria-hidden="true"><path d="M2 0h11.5L21 7.2v5.6l-2 2 2 2V24a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z" fill="currentColor"/><g fill="var(--lamp)"><rect x="3.4" y="2.6" width="1.9" height="5" rx=".6"/><rect x="6.6" y="2.6" width="1.9" height="5" rx=".6"/><rect x="9.8" y="2.6" width="1.9" height="5" rx=".6"/></g></svg>
+      <span>Ilm Card</span>
+    </a>
+    <div class="bar-right">
+    <a class="bar-link" href="#info" data-info>Facts and contact</a>
+    <button class="play" id="play" type="button" aria-pressed="false">
+      <svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 1.8v12.4a.6.6 0 0 0 .92.5l9.6-6.2a.6.6 0 0 0 0-1L4.42 1.3a.6.6 0 0 0-.92.5z" fill="currentColor"/></svg>
+      <svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><rect x="2.5" y="1.5" width="4" height="13" rx="1" fill="currentColor"/><rect x="9.5" y="1.5" width="4" height="13" rx="1" fill="currentColor"/></svg>
+      <span>Play journey</span>
+    </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="chapter chapter--hero is-first" aria-labelledby="c0">
+      <p class="urdu rise" lang="ur">علم بھی، تربیت بھی</p>
+      <h1 class="rise" id="c0">Internet nahi? Padhai phir bhi.</h1>
+      <p class="lede rise">Ilm Card puts a full school term on one memory card. It plays on a basic Android phone, with no internet.</p>
+    </section>
+
+    <section class="chapter" aria-labelledby="c1">
+      <p class="place"><svg viewBox="0 0 14 17" aria-hidden="true"><path d="M7 0a7 7 0 0 0-7 7c0 4.9 7 10 7 10s7-5.100 7-10a7 7 0 0 0-7-7zm0 9.600A2.600 2.600 0 1 1 7 4.400a2.600 2.600 0 0 1 0 5.200z" fill="currentColor"/></svg>Multan, our studio</p>
+      <h2 id="c1">It starts in one small studio.</h2>
+      <p>Teachers record every lecture of the term, following the Punjab board syllabus. Each lecture comes with a quiz and a homework task. Then the whole term is copied onto memory cards.</p>
+    </section>
+
+    <section class="chapter" aria-labelledby="c2">
+      <p class="place"><svg viewBox="0 0 14 17" aria-hidden="true"><path d="M7 0a7 7 0 0 0-7 7c0 4.9 7 10 7 10s7-5.100 7-10a7 7 0 0 0-7-7zm0 9.600A2.600 2.600 0 1 1 7 4.400a2.600 2.600 0 0 1 0 5.200z" fill="currentColor"/></svg>The road to Muzaffargarh</p>
+      <h2 id="c2">Then the cards take the road.</h2>
+      <p>Our van leaves Multan and crosses the Chenab. Past the river the signal gets weaker, and mobile data costs more than most families can spare.</p>
+      <p class="note"><strong>25.37 million children</strong> aged 5 to 16 are out of school in Pakistan.<small>Source: Federal Education Minister, statement to the National Assembly.</small></p>
+    </section>
+
+    <section class="chapter" aria-labelledby="c3">
+      <p class="place"><svg viewBox="0 0 14 17" aria-hidden="true"><path d="M7 0a7 7 0 0 0-7 7c0 4.9 7 10 7 10s7-5.100 7-10a7 7 0 0 0-7-7zm0 9.600A2.600 2.600 0 1 1 7 4.400a2.600 2.600 0 0 1 0 5.200z" fill="currentColor"/></svg>The first village</p>
+      <h2 id="c3">First stop, the mobile shop.</h2>
+      <p>Families pick up the card where they already buy phone balance. A scratch voucher and one SMS unlock the month's lessons. No bank account and no data needed.</p>
+      <p class="note"><strong>Rs 500 a month.</strong> That is about Rs 17 a day.</p>
+    </section>
+
+    <section class="chapter" aria-labelledby="c4">
+      <p class="place"><svg viewBox="0 0 14 17" aria-hidden="true"><path d="M7 0a7 7 0 0 0-7 7c0 4.9 7 10 7 10s7-5.100 7-10a7 7 0 0 0-7-7zm0 9.600A2.600 2.600 0 1 1 7 4.400a2.600 2.600 0 0 1 0 5.200z" fill="currentColor"/></svg>The second village</p>
+      <h2 id="c4">The signal drops. The lessons keep playing.</h2>
+      <p>Lectures run straight from the card. Once a month the van comes back to collect homework and bring new lessons. Where there is no signal at all, the term pass comes with its code sealed in the pack.</p>
+    </section>
+
+    <section class="chapter" aria-labelledby="c5">
+      <p class="place"><svg viewBox="0 0 14 17" aria-hidden="true"><path d="M7 0a7 7 0 0 0-7 7c0 4.9 7 10 7 10s7-5.100 7-10a7 7 0 0 0-7-7zm0 9.600A2.600 2.600 0 1 1 7 4.400a2.600 2.600 0 0 1 0 5.200z" fill="currentColor"/></svg>After dark</p>
+      <h2 id="c5">One phone becomes a classroom.</h2>
+      <p>When the day's work is done, the children sit down together. They watch the lecture, take the quiz and finish the week's task. Their scores come back by SMS.</p>
+    </section>
+
+    <section class="chapter" aria-labelledby="c6">
+      <p class="place"><svg viewBox="0 0 14 17" aria-hidden="true"><path d="M7 0a7 7 0 0 0-7 7c0 4.9 7 10 7 10s7-5.100 7-10a7 7 0 0 0-7-7zm0 9.600A2.600 2.600 0 1 1 7 4.400a2.600 2.600 0 0 1 0 5.200z" fill="currentColor"/></svg>The next morning</p>
+      <h2 id="c6">Ilm bhi, tarbiyat bhi.</h2>
+      <p>Every week, one short lesson is about character: honesty, respect, good manners, and looking after your home and your village. We want good students who are also good people.</p>
+    </section>
+
+    <section class="chapter chapter--finale" aria-labelledby="c7">
+      <p class="urdu" lang="ur">علم بھی، تربیت بھی</p>
+      <h2 id="c7">A child's village should not decide their education.</h2>
+      <p>One card holds a full term. It costs Rs 500 a month and uses no mobile data. Ilm Card is at the idea stage, and our first test is planned with 30 to 50 students in Muzaffargarh.</p>
+      <button class="btn" type="button" data-go="0">Travel again</button>
+    </section>
+  </main>
+
+  <nav class="route" aria-label="Stops on the journey">
+    <span class="route-line"><span class="route-fill" id="routeFill"></span></span>
+    <ol>
+      <li><button type="button"><span class="name">Start</span><span class="dot"></span></button></li>
+      <li><button type="button"><span class="name">The studio</span><span class="dot"></span></button></li>
+      <li><button type="button"><span class="name">The road</span><span class="dot"></span></button></li>
+      <li><button type="button"><span class="name">First village</span><span class="dot"></span></button></li>
+      <li><button type="button"><span class="name">Second village</span><span class="dot"></span></button></li>
+      <li><button type="button"><span class="name">After dark</span><span class="dot"></span></button></li>
+      <li><button type="button"><span class="name">Next morning</span><span class="dot"></span></button></li>
+      <li><button type="button"><span class="name">The idea</span><span class="dot"></span></button></li>
+    </ol>
+  </nav>
+  <div class="hint" id="hint" aria-hidden="true">Scroll to follow the card<i></i></div>
+  <!-- <div class="more" aria-hidden="true">Keep scrolling for facts and contact<i></i></div> -->
+   
+</div>
+
+<section class="info" id="info" aria-labelledby="i0">
+  <div class="wrap">
+    <header class="info-head">
+      <p class="kicker">For investors and partners</p>
+      <h2 id="i0">The facts behind Ilm Card</h2>
+      <p class="info-lede">You have seen the journey. Here are the numbers, the plan, what we are asking for and how to reach us.</p>
+    </header>
+
+    <section class="block" aria-labelledby="i1">
+      <h3 id="i1">The problem in numbers</h3>
+      <ul class="stats">
+        <li><strong>25.37 million</strong><span>children aged 5 to 16 are out of school in Pakistan.</span><small>Federal Education Minister, statement to the National Assembly</small></li>
+        <li><strong>79%</strong><span>of them have never been to school at all.</span><small>Pakistan Alliance for Maths and Science, The Missing Third of Pakistan</small></li>
+        <li><strong>610,831</strong><span>out-of-school children live in Muzaffargarh tehsil alone, where we plan to start.</span><small>The Missing Third of Pakistan</small></li>
+        <li><strong>7%</strong><span>of Class 3 children can read a simple story in Urdu or Sindhi.</span><small>ASER 2025</small></li>
+        <li><strong>55%</strong><span>is the literacy rate in rural Pakistan, against 74% in cities.</span><small>Economic Survey 2025-26</small></li>
+        <li><strong>Rs 613 billion</strong><span>is what households already spend each year on tuition.</span><small>I-SAPS</small></li>
+      </ul>
+    </section>
+
+    <section class="block two" aria-labelledby="i2">
+      <div>
+        <h3 id="i2">How it works</h3>
+        <ol class="steps">
+          <li><strong>Get the card.</strong> One memory card holds a full term of lectures, quizzes and homework, following the Punjab board syllabus.</li>
+          <li><strong>Unlock it.</strong> Buy a scratch voucher at a mobile shop, send its number by SMS and get the month's code back.</li>
+          <li><strong>Learn offline.</strong> Lectures play inside the app on a basic Android phone. No internet is used.</li>
+          <li><strong>Hand in homework.</strong> Work goes back through the shop, an NGO centre or the monthly van. Scores come back by SMS.</li>
+          <li><strong>Sit the exam.</strong> Each term ends with an exam at a nearby school and a completion certificate.</li>
+        </ol>
+      </div>
+      <div>
+        <h3>What it costs a family</h3>
+        <dl class="prices">
+          <div><dt>Monthly plan</dt><dd>Rs 500</dd></div>
+          <div><dt>Term pass, 6 months paid upfront</dt><dd>Rs 2,500</dd></div>
+          <div><dt>Second child in the family</dt><dd>50% off</dd></div>
+          <div><dt>End-of-term exam and certificate</dt><dd>Rs 500</dd></div>
+          <div><dt>Scholarship card for a child who cannot pay</dt><dd>Free</dd></div>
+        </dl>
+        <p class="fine">Every 5 paid subscriptions fund 1 free card. Sponsors and grants fund the rest.</p>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="i3">
+      <h3 id="i3">Our first year</h3>
+      <ol class="plan">
+        <li><span class="when">Months 1 to 3</span><p>Build the app and the SMS unlock system. Record term one of Maths and English. Test with 30 to 50 students at one NGO centre.</p></li>
+        <li><span class="when">Months 3 to 6</span><p>Run a full pilot term with 300 to 500 students in Muzaffargarh, sold through 10 to 15 mobile shops, ending in the first exam day.</p></li>
+        <li><span class="when">Months 6 to 12</span><p>Publish the results. Record the remaining Matric subjects. Expand to Rajanpur and DG Khan, with a target of 3,000 students.</p></li>
+      </ol>
+      <p class="fine">Ilm Card is at the idea stage today. These are targets, and the pilot is how we will test them.</p>
+    </section>
+
+    <section class="block ask" aria-labelledby="i4">
+      <div>
+        <h3 id="i4">What we are asking for</h3>
+        <p class="big">Rs 7 million</p>
+        <p>Rs 5 million as investment for 12% equity, and Rs 2 million as a grant for scholarship cards and free seats.</p>
+        <p>It pays for the app and the first recorded term, the cards and readers, the pilot in Muzaffargarh and twelve months of running costs.</p>
+      </div>
+      <ul class="ways">
+        <li><strong>Investors</strong>Back the pilot and the first three districts.</li>
+        <li><strong>NGOs and schools</strong>Host the cards in your centres and get termly learning data for your donors.</li>
+        <li><strong>Teachers and course creators</strong>License your lectures and earn a royalty for every student.</li>
+        <li><strong>Sponsors</strong>Pay for one child's term and receive progress updates.</li>
+      </ul>
+    </section>
+
+    <section class="contact" aria-labelledby="i5">
+      <div>
+        <h3 id="i5">Talk to us</h3>
+        <p>Tell us whether you want to invest, partner or sponsor a child, and we will reply with the full business plan.</p>
+        <dl class="reach">
+          <div><dt>Email</dt><dd><span data-fill="email" class="is-empty">ilmcard@gmail.com</span><button type="button" class="copy" data-copy="email">Copy</button></dd></div>
+          <div><dt>Phone or WhatsApp</dt><dd><span data-fill="phone" class="is-empty">0300-ILMCARD</span><button type="button" class="copy" data-copy="phone">Copy</button></dd></div>
+          <div><dt>Based in</dt><dd><span data-fill="place">Pakistan</span></dd></div>
+        </dl>
+      </div>
+      <div>
+        <h3>The team</h3>
+        <ul class="team">
+          <li><strong>Abdullah Farhan</strong>Chief Executive and Technology Officer</li>
+          <li><strong>Ali Baig</strong>Chief Marketing and Operations Officer</li>
+          <li><strong>Syed Muhammad Nadey Ali</strong>Chief Financial Officer</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <p lang="ur" class="foot-urdu">علم بھی، تربیت بھی</p>
+      <p>Ilm Card. Ilm bhi, tarbiyat bhi. <span id="year"></span></p>
+      <a href="#top" data-go="0">Back to the start of the journey</a>
+    </footer>
+  </div>
+</section>
+
+<script src="js/three.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/journey.js"></script>
+</body>
+</html>
